@@ -209,9 +209,10 @@ section.block{padding:5.5rem 0}
 .marquee-track{display:flex;gap:1.4rem;width:max-content;animation:marquee 70s linear infinite}
 .clients-marquee:hover .marquee-track{animation-play-state:paused}
 @keyframes marquee{to{transform:translateX(-50%)}}
-.client{background:#fff;border:1px solid var(--line);border-radius:14px;width:200px;height:118px;display:grid;place-content:center;padding:1.4rem;flex-shrink:0}
-.client img{max-height:64px;width:auto;filter:grayscale(1);opacity:.6;transition:filter .25s,opacity .25s}
-.client:hover img{filter:grayscale(0);opacity:1}
+.client{background:#fff;border:1px solid var(--line);border-radius:14px;width:200px;height:118px;display:grid;place-content:center;padding:1.4rem;flex-shrink:0;transition:box-shadow .25s,transform .25s,border-color .25s}
+.client img{max-height:64px;width:auto;transition:transform .25s}
+.client:hover{box-shadow:var(--shadow);transform:translateY(-5px);border-color:var(--blue-100)}
+.client:hover img{transform:scale(1.07)}
 .client .txt{font-family:'Lexend';font-weight:600;color:var(--slate);font-size:.9rem;text-align:center;line-height:1.2}
 
 /* CTA */
