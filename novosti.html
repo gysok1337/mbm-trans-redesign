@@ -89,15 +89,6 @@
     <span>Перевозка негабаритных грузов · Санкт-Петербург</span>
   </div>
 </footer>
-<script>
-const header=document.getElementById('header');
-addEventListener('scroll',()=>header.classList.toggle('scrolled',scrollY>20),{passive:true});
-const burger=document.getElementById('burger'),nav=document.getElementById('nav'),ov=document.getElementById('overlay');
-function tm(){const o=nav.classList.toggle('open');ov.classList.toggle('show',o);burger.setAttribute('aria-expanded',o)}
-burger.onclick=tm;ov.onclick=tm;
-const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
-document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-</script>
+<script src="assets/js/site.js" defer></script>
 </body>
 </html>

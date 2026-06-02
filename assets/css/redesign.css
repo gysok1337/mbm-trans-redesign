@@ -284,6 +284,8 @@ footer{background:var(--navy);color:#9db6cc;padding:4rem 0 0}
      context (sticky+z-index), so the menu's z-index is trapped inside it
      and the overlay (z 70) would paint on top — greying out & blocking the menu. */
   .header{backdrop-filter:none;-webkit-backdrop-filter:none;background:#fff;z-index:90}
+  /* burger (turns into ✕) must sit above the open menu panel to act as close */
+  .burger{position:relative;z-index:95;color:var(--ink)}
   .about-grid,.contact-grid{grid-template-columns:1fr;gap:2.5rem}
   .about-photo{max-width:430px;margin-inline:auto}
   .news-grid,.maps,.form .grid2{grid-template-columns:1fr}
@@ -291,10 +293,16 @@ footer{background:var(--navy);color:#9db6cc;padding:4rem 0 0}
   .proj.big{grid-column:span 2;grid-row:auto;aspect-ratio:16/10}
   .foot-grid{grid-template-columns:1fr 1fr}
   section.block{padding:4rem 0}
-  nav.main.open{display:flex;position:fixed;inset:0 0 0 auto;width:min(84vw,330px);background:#fff;flex-direction:column;align-items:stretch;padding:5rem 1rem 2rem;gap:.15rem;z-index:var(--z-menu);overflow-y:auto;box-shadow:var(--shadow)}
-  nav.main.open>a,nav.main.open .has-sub>a{font-size:1.05rem;padding:.85rem 1rem}
-  nav.main.open .has-sub .sub{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;border:none;padding-left:1rem;min-width:0}
+  nav.main.open{display:flex;position:fixed;inset:0 0 0 auto;width:min(84vw,330px);background:#fff;flex-direction:column;align-items:stretch;padding:4.5rem 1rem 2rem;gap:.15rem;z-index:var(--z-menu);overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;box-shadow:var(--shadow)}
+  nav.main.open>a,nav.main.open .has-sub>a{font-size:1.05rem;padding:.85rem 1rem;border-bottom:1px solid var(--line)}
+  /* submenu = accordion, collapsed by default, toggled via .sub-open */
+  nav.main.open .has-sub>a{justify-content:space-between}
+  nav.main.open .has-sub>a .icon{transition:transform .3s ease}
+  nav.main.open .has-sub.sub-open>a .icon{transform:rotate(180deg)}
+  nav.main.open .has-sub .sub{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;border:none;padding:0 0 0 .8rem;min-width:0;max-height:0;overflow:hidden;transition:max-height .32s ease}
+  nav.main.open .has-sub.sub-open .sub{max-height:440px}
   .overlay.show{position:fixed;inset:0;background:rgba(11,34,54,.5);z-index:var(--z-overlay)}
+  body.no-scroll{overflow:hidden;touch-action:none}
 }
 @media(max-width:560px){
   body{font-size:16px}
