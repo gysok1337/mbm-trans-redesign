@@ -147,10 +147,6 @@ def footer():
     <span>Перевозка негабаритных грузов · Санкт-Петербург</span>
   </div>
 </footer>
-<div class="mobile-cta">
-  <a class="mcta-call" href="tel:+78124016564">{ICON['phone']}Позвонить</a>
-  <a class="mcta-req" href="kontaktyi.html">Оставить заявку</a>
-</div>
 <script src="assets/js/site.js" defer></script>
 </body>
 </html>'''

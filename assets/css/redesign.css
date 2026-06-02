@@ -403,20 +403,3 @@ nav.main a.active{color:var(--blue);background:var(--blue-50)}
 .reviews-grid{grid-template-columns:repeat(3,1fr);max-width:900px;margin-inline:auto}
 @media(max-width:1080px){.reviews-grid{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:560px){.reviews-grid{grid-template-columns:1fr;max-width:340px}}
-
-/* sticky mobile CTA bar */
-.mobile-cta{display:none}
-@media(max-width:920px){
-  .mobile-cta{display:grid;grid-template-columns:1fr 1.5fr;gap:.6rem;position:fixed;left:0;right:0;bottom:0;z-index:60;
-    padding:.55rem .7rem calc(.55rem + env(safe-area-inset-bottom,0px));
-    background:rgba(255,255,255,.97);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);
-    border-top:1px solid var(--line);box-shadow:0 -6px 22px rgba(11,34,54,.12)}
-  .mobile-cta a{display:flex;align-items:center;justify-content:center;gap:.45rem;font-family:'Lexend';font-weight:600;
-    padding:.85rem .6rem;border-radius:11px;font-size:.96rem;line-height:1}
-  .mobile-cta a .icon{width:18px;height:18px}
-  .mcta-call{border:2px solid var(--blue);color:var(--blue)}
-  .mcta-req{background:var(--orange);color:#fff}
-  body{padding-bottom:74px}
-  /* keep menu/overlay above the bar */
-  nav.main.open,.overlay.show{z-index:var(--z-menu)}
-}
