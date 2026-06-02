@@ -59,6 +59,17 @@ def head(title, desc, active):
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700;800&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="МБМ-Транс">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:title" content="{title}">
+<meta property="og:description" content="{desc}">
+<meta property="og:image" content="https://gysok1337.github.io/mbm-trans-redesign/assets/og-cover.jpg">
+<meta property="og:url" content="https://gysok1337.github.io/mbm-trans-redesign/{active}">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="assets/css/redesign.css">
 </head>
 <body>
@@ -136,6 +147,10 @@ def footer():
     <span>Перевозка негабаритных грузов · Санкт-Петербург</span>
   </div>
 </footer>
+<div class="mobile-cta">
+  <a class="mcta-call" href="tel:+78124016564">{ICON['phone']}Позвонить</a>
+  <a class="mcta-req" href="kontaktyi.html">Оставить заявку</a>
+</div>
 <script src="assets/js/site.js" defer></script>
 </body>
 </html>'''
